@@ -245,30 +245,30 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="Problem" title="문제"></p>
+              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/Problem.PNG?raw=true" alt="Problem" title="문제"></p>
 <p>NONamed_길에서 주어온 만두 문제는 위와 같다.<br>
 제공된 파일을 먼저 다운로드했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="zip" title="zip"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/zip.PNG?raw=true" alt="zip" title="zip"></p>
 <p>이번 과제에서 처음으로 정상적인 zip 파일이다!!<br>
 big.png와 readme.txt로 구성되어 있다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="big" title="big.png"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/big.png?raw=true" alt="big" title="big.png"></p>
 <p>readme.txt에는 아래와 같이 문제의 힌트가 적혀 있다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="readme.txt" title="readme.txt"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/readme1.PNG?raw=true" alt="readme.txt" title="readme.txt"></p>
 <p>passwd가 필요한 것으로 봐서 openstego나 steghide같다.<br>
 passwd를 알아내기 위해 먼저 Ubuntu에서 Strings 명령어를 통해<br>
 파일 내의 문자열을 출력했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="str1" title="str1"></p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="str2" title="str2"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/string1.PNG?raw=true" alt="str1" title="str1"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/string2.PNG?raw=true" alt="str2" title="str2"></p>
 <p>사실 Strings 명령어로 passwd를 알아낼 수 있으리라 생각하지 않았어서<br>
 많이 당황했다.</p>
 <p>먼저 아까 예상한 Steghide를 통해 복호화를 시도했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="steghide" title="steghide"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/steghide1.PNG?raw=true" alt="steghide" title="steghide"></p>
 <p>실패!<br>
 다음은 Openstego를 통해 복호화를 시도했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="openstego" title="openstego"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/openstego1.PNG?raw=true" alt="openstego" title="openstego"></p>
 <p>성공했다!<br>
 medium.png를 추출해냈다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="medium" title="medium"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/NONamed_%EA%B8%B8%EC%97%90%EC%84%9C%20%EC%A3%BC%EC%96%B4%EC%98%A8%20%EB%A7%8C%EB%91%90/medium.png?raw=true" alt="medium" title="medium"></p>
 <p>[출처]</p>
 <ul>
 <li>NONamed : <a href="http://ctf.no-named.kr:1234/">http://ctf.no-named.kr:1234/</a></li>

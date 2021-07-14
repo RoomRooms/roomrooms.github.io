@@ -13,27 +13,27 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Digital Forensic] Suninatas 21번">
-<meta name="twitter:title" content="[Digital Forensic] Suninatas 21번">
-<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
-<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+<meta property="og:title" content="[Digital Forensic] NONamed_MagicIMAGE">
+<meta name="twitter:title" content="[Digital Forensic] NONamed_MagicIMAGE">
+<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
 <meta property="og:site_name" content="Rooms&#39;s SW Blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-15T03:53:58">
+    <meta property="article:published_time" content="2021-07-15T04:53:38">
   
   
-    <meta property="article:modified_time" content="2021-07-15T03:53:58">
+    <meta property="article:modified_time" content="2021-07-15T04:53:38">
   
   
   
     
       <meta property="article:section" content="Digital Forensic">
     
-      <meta property="article:section" content="Suninatas">
+      <meta property="article:section" content="NONamed">
     
   
   
@@ -59,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
 
 
-    <title>[Digital Forensic] Suninatas 21번</title>
+    <title>[Digital Forensic] NONamed_MagicIMAGE</title>
 
     <link rel="icon" href="https://roomrooms.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,13 +216,13 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      [Digital Forensic] Suninatas 21번
+      [Digital Forensic] NONamed_MagicIMAGE
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-15T03:53:58&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-07-15T04:53:38&#43;09:00">
         
   July 15, 2021
 
@@ -235,7 +235,7 @@
     
       <a class="category-link" href="https://roomrooms.github.io/categories/digital-forensic">Digital Forensic</a>, 
     
-      <a class="category-link" href="https://roomrooms.github.io/categories/suninatas">Suninatas</a>
+      <a class="category-link" href="https://roomrooms.github.io/categories/nonamed">NONamed</a>
     
   
 
@@ -245,17 +245,20 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/Problem.PNG?raw=true" alt="문제" title="21번 문제"></p>
-<p>Suninatas 21번 문제는 위와 같다.<br>
-처음 문제를 확인하자마자 Steganography를 떠올렸다.<br>
-이를 확인하기 위해서 Ubuntu에서 Binwalk를 사용하여 내부에 숨겨진 파일이 존재하는지 확인했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/binwalk.PNG?raw=true" alt="binwalk" title="binwalk 실행결과"></p>
-<p>상당히 많은 파일이 존재한다는 것을 알 수 있다.<br>
-이를 전부 사람이 추출하는 것은 비효율적이다.<br>
-Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을 추출해냈다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="foremost" title="foremost 실행결과"></p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/output.PNG?raw=true" alt="output" title="foremost output"><br>
-위와 같이 monitor.jpg 내에 숨어 있는 다량의 이미지 파일들을 추출하여 Flag 값을 알 수 있다.</p>
+              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="Problem" title="MagicIMAGE 문제"></p>
+<p>NONamed_MagicIMAGE 문제는 위와 같다.<br>
+제공된 파일을 먼저 다운로드했다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="제공된 이미지" title="mandu.png"></p>
+<p>당연하게도 정상적인 png 파일이 아니였다.<br>
+이런 문제는 가장 먼저 파일 시그니처를 확인한다. 파일의 유형을 파악하기 위해서</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="mandu.png 바이너리 값" title="바이너리 값"></p>
+<p>정상적인 PNG의 파일 시그니처 값은 &ldquo;89 50 4E 47 0D 0A 1A 0A&quot;인 반면<br>
+mandu.png는 &ldquo;89 50 4E 47 0E 0B 1F 0B&quot;인 것을 확인할 수 있다.<br>
+이를 정상적인 시그니처 값으로 수정해보았다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="fix Signature" title="PNG 시그니처 값 수정"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="Flag" title="Flag 값"></p>
+<p>그 결과 위와 같이 Flag 값을 얻을 수 있다.<br>
+Flag 값은 직접 찾아보세요!</p>
               
             </div>
           </div>
@@ -280,7 +283,7 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/" data-tooltip="[Digital Forensic] NONamed_MagicIMAGE">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -288,7 +291,7 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/" data-tooltip="[Digital Forensic] Suninatas 21번">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -306,19 +309,19 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -366,7 +369,7 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/" data-tooltip="[Digital Forensic] NONamed_MagicIMAGE">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -374,7 +377,7 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/" data-tooltip="[Digital Forensic] Suninatas 21번">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -392,19 +395,19 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -434,19 +437,19 @@ Foremost 도구를 사용하여 monitor.jpg 안에 존재하는 모든 파일을
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-suninatas-21%25EB%25B2%2588%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_magicimage%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-suninatas-21%25EB%25B2%2588%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_magicimage%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-suninatas-21%25EB%25B2%2588%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_magicimage%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -538,9 +541,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-suninatas-21%EB%B2%88\/';
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-nonamed_magicimage\/';
           
-            this.page.identifier = '\/2021\/07\/digital-forensic-suninatas-21%EB%B2%88\/'
+            this.page.identifier = '\/2021\/07\/digital-forensic-nonamed_magicimage\/'
           
         };
         (function() {

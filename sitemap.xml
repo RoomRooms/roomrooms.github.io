@@ -2,12 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://roomrooms.github.io/archives/</loc>
+    <loc>https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
   </url><url>
     <loc>https://roomrooms.github.io/categories/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
+  </url><url>
+    <loc>https://roomrooms.github.io/tags/df/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
+  </url><url>
+    <loc>https://roomrooms.github.io/categories/digital-forensic/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
+  </url><url>
+    <loc>https://roomrooms.github.io/post/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
   </url><url>
     <loc>https://roomrooms.github.io/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
+  </url><url>
+    <loc>https://roomrooms.github.io/categories/suninatas/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
   </url><url>
     <loc>https://roomrooms.github.io/tags/</loc>
+    <lastmod>2021-07-15T03:53:58+09:00</lastmod>
+  </url><url>
+    <loc>https://roomrooms.github.io/archives/</loc>
   </url>
 </urlset>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rooms&#39;s SW Blog</title>
-    <link>https://roomrooms.github.io/</link>
-    <description>Recent content on Rooms&#39;s SW Blog</description>
+    <title>Suninatas on Rooms&#39;s SW Blog</title>
+    <link>https://roomrooms.github.io/categories/suninatas/</link>
+    <description>Recent content in Suninatas on Rooms&#39;s SW Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jul 2021 03:53:58 +0900</lastBuildDate><atom:link href="https://roomrooms.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 03:53:58 +0900</lastBuildDate><atom:link href="https://roomrooms.github.io/categories/suninatas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Digital Forensic] Suninatas 21번</title>
       <link>https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/</link>

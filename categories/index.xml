@@ -5,6 +5,25 @@
     <link>https://roomrooms.github.io/categories/</link>
     <description>Recent content in Categories on Rooms&#39;s SW Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://roomrooms.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Jul 2021 03:53:58 +0900</lastBuildDate><atom:link href="https://roomrooms.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digital Forensic</title>
+      <link>https://roomrooms.github.io/categories/digital-forensic/</link>
+      <pubDate>Thu, 15 Jul 2021 03:53:58 +0900</pubDate>
+      
+      <guid>https://roomrooms.github.io/categories/digital-forensic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Suninatas</title>
+      <link>https://roomrooms.github.io/categories/suninatas/</link>
+      <pubDate>Thu, 15 Jul 2021 03:53:58 +0900</pubDate>
+      
+      <guid>https://roomrooms.github.io/categories/suninatas/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

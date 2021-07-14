@@ -245,20 +245,21 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="Problem" title="MagicIMAGE 문제"></p>
+              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="Problem" title="MagicIMAGE 문제"></p>
 <p>NONamed_MagicIMAGE 문제는 위와 같다.<br>
 제공된 파일을 먼저 다운로드했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="제공된 이미지" title="mandu.png"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/Image.PNG?raw=true" alt="제공된 이미지" title="mandu.png"></p>
 <p>당연하게도 정상적인 png 파일이 아니였다.<br>
 이런 문제는 가장 먼저 파일 시그니처를 확인한다. 파일의 유형을 파악하기 위해서</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="mandu.png 바이너리 값" title="바이너리 값"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/hex.PNG?raw=true" alt="mandu.png 바이너리 값" title="바이너리 값"></p>
 <p>정상적인 PNG의 파일 시그니처 값은 &ldquo;89 50 4E 47 0D 0A 1A 0A&quot;인 반면<br>
 mandu.png는 &ldquo;89 50 4E 47 0E 0B 1F 0B&quot;인 것을 확인할 수 있다.<br>
 이를 정상적인 시그니처 값으로 수정해보았다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="fix Signature" title="PNG 시그니처 값 수정"></p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/Suninatas/21/foremost.PNG?raw=true" alt="Flag" title="Flag 값"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/hex_fix.PNG?raw=true" alt="fix Signature" title="PNG 시그니처 값 수정"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/Flag.png?raw=true" alt="Flag" title="Flag 값"></p>
 <p>그 결과 위와 같이 Flag 값을 얻을 수 있다.<br>
 Flag 값은 직접 찾아보세요!</p>
+<p>[출처] : <a href="%22http://ctf.no-named.kr:1234/%22">NONamed</a></p>
               
             </div>
           </div>

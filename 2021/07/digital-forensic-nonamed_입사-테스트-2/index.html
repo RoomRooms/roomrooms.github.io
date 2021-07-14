@@ -13,10 +13,10 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Digital Forensic] NONamed_MagicIMAGE">
-<meta name="twitter:title" content="[Digital Forensic] NONamed_MagicIMAGE">
-<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
-<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+<meta property="og:title" content="[Digital Forensic] NONamed_입사 테스트 [2]">
+<meta name="twitter:title" content="[Digital Forensic] NONamed_입사 테스트 [2]">
+<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
 <meta property="og:site_name" content="Rooms&#39;s SW Blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
@@ -59,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
 
 
-    <title>[Digital Forensic] NONamed_MagicIMAGE</title>
+    <title>[Digital Forensic] NONamed_입사 테스트 [2]</title>
 
     <link rel="icon" href="https://roomrooms.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,7 +216,7 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      [Digital Forensic] NONamed_MagicIMAGE
+      [Digital Forensic] NONamed_입사 테스트 [2]
     </h1>
   
   
@@ -245,23 +245,43 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="Problem" title="MagicIMAGE 문제"></p>
-<p>NONamed_MagicIMAGE 문제는 위와 같다.<br>
-제공된 파일을 먼저 다운로드했다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/Image.PNG?raw=true" alt="제공된 이미지" title="mandu.png"></p>
-<p>당연하게도 정상적인 png 파일이 아니였다.<br>
-이런 문제는 가장 먼저 파일 시그니처를 확인한다. 파일의 유형을 파악하기 위해서</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/hex.PNG?raw=true" alt="mandu.png 바이너리 값" title="바이너리 값"></p>
-<p>정상적인 PNG의 파일 시그니처 값은 &ldquo;89 50 4E 47 0D 0A 1A 0A&quot;인 반면<br>
-mandu.png는 &ldquo;89 50 4E 47 0E 0B 1F 0B&quot;인 것을 확인할 수 있다.<br>
-이를 정상적인 시그니처 값으로 수정해보았다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/hex_fix.PNG?raw=true" alt="fix Signature" title="PNG 시그니처 값 수정"></p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/Flag.png?raw=true" alt="Flag" title="Flag 값"></p>
-<p>그 결과 위와 같이 Flag 값을 얻을 수 있다.<br>
-Flag 값은 직접 찾아보세요!</p>
+              <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="Problem" title="입사 테스트 [2] 문제"></p>
+<p>NONamed_입사 테스트 [2] 문제는 위와 같다.<br>
+제공된 파일을 먼저 다운로드했다. ( task.jpg )</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="제공된 이미지" title="task.jpg"></p>
+<p>당연하게도 손상된 파일이다.<br>
+파일의 시그니처 값을 확인하기 위해 HxD로 파일을 열어주었다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="HeX 값" title="task.jpg의 Hex값"></p>
+<p>정상적인 JPG의 파일 시그니처는 &ldquo;FF D8 FF E0 xx xx 4A 46&quot;인 것에 비해<br>
+task.jpg의 파일 시그니처는 &ldquo;89 4A 50 47 0D 0A 1A 0A&quot;인 것을 알 수 있다.<br>
+이를 통해 jpg 파일이 아니라는 것을 확인할 수 있다.</p>
+<p>task.jpg 파일 내부 구조를 분석하다보면 IHDR이 존재한다는 것을 알 수 있다.<br>
+IHDR은 png에 존재하는 필수 chunk 중에 하나인데, 이를 통해 task.jpg가 png 파일이라는 것을 알 수 있다.<br>
+task.jpg의 파일 시그니처를 png의 파일 시그니처인 &ldquo;89 50 4E 47 0D 0A 1A 0A&quot;로 바꿔줬다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="fix sign" title="파일 시그니처 수정"></p>
+<p>그러면 새까만 이미지의 task.png 파일을 얻을 수 있다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="black img" title="task.png"></p>
+<p>task.png가 새까만 것으로 봐서 손상된 파일임을 짐작할 수 있다.<br>
+손상된 부분을 확인하기 위해서 Ubuntu의 pngcheck를 사용했다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="pngcheck" title="파일 손상 확인"></p>
+<p>오류를 보면 tRNS 청크가 IDAT보다 선행해야 한다고 나온다. 즉, tRNS 청크가 IDAT 청크보다 뒤에 존재한다는 것이다.<br>
+이를 수정하기 위해서 TweakPNG를 사용했다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="TweakPNG" title="청크 확인"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="TweakPNG" title="청크 순서 변경"></p>
+<p>task.png의 내부 chuck를 보고 한참을 고민하고, pngcheck로 삽질을 하다가 APNG 구조를 참고하라는 힌트를 얻었다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="apng" title="apng 구조"></p>
+<p>apng 구조는 위와 같은데 아까 확인한 task.png의 청크와 유사하다는 것을 알 수 있다.<br>
+task.png의 청크 구조를 apng에 맞게 수정해주었다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="TweakPNG" title="청크 순서 변경"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="task.png" title="파일 복구"></p>
+<p>청크를 apng에 맞게 수정한 결과 위와 같이 task.png를 복구할 수 있었다.</p>
+<p>하지만 아직 Flag값을 알지 못했다. 그래서 apngdis를 사용해서 task.png 파일의 프레임을 분리하였다.<br>
+그 결과 Flag값을 얻을 수 있었다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Digital%20Forensic/NONamed/magicIMAGE/problem.PNG?raw=true" alt="Flag" title="Flag"></p>
 <p>[출처]</p>
 <ul>
 <li>NONamed : <a href="http://ctf.no-named.kr:1234/">http://ctf.no-named.kr:1234/</a></li>
+<li>Wikipedia : <a href="https://ko.wikipedia.org/wiki/APNG">https://ko.wikipedia.org/wiki/APNG</a></li>
 </ul>
               
             </div>
@@ -287,7 +307,7 @@ Flag 값은 직접 찾아보세요!</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/" data-tooltip="[Digital Forensic] NONamed_MagicIMAGE">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -295,7 +315,7 @@ Flag 값은 직접 찾아보세요!</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/" data-tooltip="[Digital Forensic] NONamed_입사 테스트 [2]">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/" data-tooltip="[Digital Forensic] Suninatas 21번">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -313,19 +333,19 @@ Flag 값은 직접 찾아보세요!</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -373,7 +393,7 @@ Flag 값은 직접 찾아보세요!</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/" data-tooltip="[Digital Forensic] NONamed_MagicIMAGE">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -381,7 +401,7 @@ Flag 값은 직접 찾아보세요!</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/" data-tooltip="[Digital Forensic] NONamed_입사 테스트 [2]">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-21%EB%B2%88/" data-tooltip="[Digital Forensic] Suninatas 21번">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -399,19 +419,19 @@ Flag 값은 직접 찾아보세요!</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_magicimage/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -441,19 +461,19 @@ Flag 값은 직접 찾아보세요!</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_magicimage%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259E%2585%25EC%2582%25AC-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8-2%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_magicimage%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259E%2585%25EC%2582%25AC-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8-2%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_magicimage%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259E%2585%25EC%2582%25AC-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8-2%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -545,9 +565,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-nonamed_magicimage\/';
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2\/';
           
-            this.page.identifier = '\/2021\/07\/digital-forensic-nonamed_magicimage\/'
+            this.page.identifier = '\/2021\/07\/digital-forensic-nonamed_%EC%9E%85%EC%82%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8-2\/'
           
         };
         (function() {

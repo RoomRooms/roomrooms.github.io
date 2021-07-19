@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.85.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Bang JaeHun">
+<meta name="keywords" content="tech">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Crypto] Modern Cryptology Study weak 2">
+<meta name="twitter:title" content="[Crypto] Modern Cryptology Study weak 2">
+<meta property="og:url" content="https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+<meta property="og:site_name" content="Rooms&#39;s SW Blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-07-19T17:37:28">
+  
+  
+    <meta property="article:modified_time" content="2021-07-19T17:37:28">
+  
+  
+  
+    
+      <meta property="article:section" content="Crypto">
+    
+  
+  
+    
+      <meta property="article:tag" content="crp">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
+
+
+    <title>[Crypto] Modern Cryptology Study weak 2</title>
+
+    <link rel="icon" href="https://roomrooms.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://roomrooms.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://roomrooms.github.io/">Rooms&#39;s SW Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://roomrooms.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://roomrooms.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Bang JaeHun</h4>
+        
+          <h5 class="sidebar-profile-bio">A Student living in Seoul</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/RoomRooms" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      [Crypto] Modern Cryptology Study weak 2
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-07-19T17:37:28&#43;09:00">
+        
+  July 19, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://roomrooms.github.io/categories/crypto">Crypto</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>원동호 저자의 현대 암호학 (제 6판)을 읽고 정리한 글입니다.<br>
+교재 정보 : <a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;mallGb=KOR&amp;barcode=9788957273050&amp;orderClick=LAG&amp;Kc=" title="교재 정보">Book</a><br>
+정리 분량 : p.25 ~ 42</p>
+<h3 id="21-정수-집합">2.1 정수 집합</h3>
+<h4 id="211-연산의-기본-성질">2.1.1 연산의 기본 성질</h4>
+<p>정수 집합 Z 위에서는 덧셈과 곱셈이 성립하며 몇 가지 성질을 갖는다.</p>
+<blockquote>
+<p>Z1. 덧셈이 정의된다.<br>
+Z2. 덤셈에 대하여 교환 법칙이 성립된다.<br>
+Z3. 덧셈에 대하여 결합 법칙이 성립된다.<br>
+Z4. 덧셈에 대한 항등원(Identity)은 정수 0이다.<br>
+Z5. 집합 Z에는 a∈Z의 역원(Inverse)인 -a∈Z가 존재한다. 따라서 뺄셈도 정의된다.<br>
+Z6. 곱셈이 정의된다.
+Z7. 곱셈에 대하여 교환 법칙이 성립된다.<br>
+Z8. 곱셈에 대하여 결합 법칙이 성립된다.<br>
+Z9. 곱셉에 대한 항등원(Identity)은 정수 1이다.<br>
+Z10. 덧셈과 곱셈은 분배 법칙이 성립된다.</p>
+</blockquote>
+<p>곱셈은 1과 -1만이 역원을 갖는다. 따라서 정수 집합 Z 위에서는 나눗셈이 정의되지 않는다.</p>
+<h3 id="22-약수와-배수">2.2 약수와 배수</h3>
+<p>집합 Z 위의 정수 a 와 b가 b = c * a를 만족하는 정수 c가 존재할 때,<br>
+a는 b의 약수(divisor)라고 하며, b를 a의 배수라고 한다.</p>
+<blockquote>
+<p>a | b ( a는 b를 나눈다. or b는 a로 나누어 떨어진다. )</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>d | a, d | b</p>
+</blockquote>
+<p>위와 같은 정수 d를 a와 b의 공약수(common divisor)라고 한다.<br>
+a와 b의 공약수 중에서 가장 큰 공약수를 최대 공약수(gcd : greatest common divisor)라고 한다.</p>
+<h4 id="221-유클리드-호제법-euclidean-algorithm">2.2.1 유클리드 호제법 (Euclidean algorithm)</h4>
+<p>두 양의 정수 a, b의 최대 공약수를 구하는 알고리즘이다.<br>
+a를 b로 나눈 나머지를 r이라고 할 때, a와 b의 gcd는 b와 r의 gcd와 같다.<br>
+이런 성질을 이용한 알고리즘으로 b를 r로 나눈 나머지 r1을 구하고<br>
+다시 r을 r1으로 나눈 나머지를 구하는 과정을 반복한다.<br>
+나머지가 0이 되었을 때, 나누는 수가 a와 b의 gcd이다.</p>
+<p>참조 : <a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95" title="wiki">Wiki</a></p>
+<p>이에 대한 예제로 510과 62의 gcd를 구해보자.</p>
+<p>510 = 62 * 8 + 14<br>
+62 = 14 * 4 + 6<br>
+14 = 6 * 2 + 2<br>
+6 = 2 * 3 + 0</p>
+<p>이를 통해 510과 62의 gcd는 2라는 것을 알 수 있다.</p>
+<h3 id="23-소수">2.3 소수</h3>
+<blockquote>
+<p>소수 : 1과 자기 자신 이외의 약수가 존재하지 않는 양의 정수<br>
+합성수 : 소수가 아닌 정수</p>
+</blockquote>
+<p>정수 n은 유일한 소수의 곱으로 표시된다.<br>
+이를 n의 표준 분해라고 한다. ( 추후 보충 예정 )</p>
+<h4 id="231-소수의-분포">2.3.1 소수의 분포</h4>
+<p>양의 정수 중에 소수는 무한히 많다.<br>
+양의 정수 x를 임의로 선택할 때, x안에 분포하는 소수의 개수를 π(x)라고 하며 그 값은 x/ln x로써 표기된다.</p>
+<h5 id="1-mersenne-소수">(1) Mersenne 소수</h5>
+<p>양정수 중에 2^p - 1의 형태로 표시되는 수를 Mersenne 수라고 한다.<br>
+이중에서 소수를 Mersenne 소수라고 한다.<br>
+Mersenne 소수가 되려면 p는 소수여야 한다.<br>
+그 역은 성립 불가</p>
+<h5 id="2-fermat의-수">(2) Fermat의 수</h5>
+<p>2^2^n - 1의 모양의 수를 Fermat의 수라고 한다.<br>
+이 중 소수를 Fermat의 소수라고 한다.</p>
+<h5 id="3-carmichael-수">(3) Carmichael 수</h5>
+<p>gcd(a,n) ≡ 1인 모든 a에 대하여 a^p-1 ≡ 1 mod p이 성립된다.<br>
+이는 Fermat의 소정리에 의한 것이다.</p>
+<h5 id="4-소수-판정법">(4) 소수 판정법</h5>
+<p>소수 판별법에는 결정적 판정방법과 확률적 판정방법이 존재한다.</p>
+<p>결정적 소수 판정법은 정확도는 높으나 시간이 오래 소모된다.<br>
+( Euclid 호제법, Fermat의 방법, Wilson 방법, etc.. )</p>
+<p>확률적 소수 판정법은 정확성은 결정적 방식에 비해 낮지만 소모되는 시간이 짧다.<br>
+대부분 이 방법을 이용한다.<br>
+( Solovay - Strassen 방법, Lehmann - Peralta 방법, etc.. )</p>
+<h3 id="24-합동식">2.4 합동식</h3>
+<p>a-b가 m의 배수일 때, a와 b는 법(modulus) m에 관한 합동이라고 한다.</p>
+<blockquote>
+<p>a ≡ b mod m</p>
+</blockquote>
+<p>합동은 상등, 상이, 대등 등의 관계가 존재하며,<br>
+세 가지의 성질을 갖는다.</p>
+<blockquote>
+<p>a ≡ a mod m (반사적)<br>
+a ≡ b mod m 이면 b ≡ a mod m (대칭적)<br>
+a ≡ b mod m, b ≡ c mod m 이면 a ≡ c mod m (추이적)</p>
+</blockquote>
+<h4 id="241-법-m에-관한-잉여계">2.4.1 법 m에 관한 잉여계</h4>
+<p>a ≡ b mod m은 정수 전체 집합 Z 위에서 동치 관계이다.<br>
+(합동의 세 가지 성질을 갖기 때문에)</p>
+<p>a ≡ b mod m에 대한 정수 집합 Z위의 동치류를 법 m에 대한 잉여류(Residue)라고 한다.
+a∈Z에 의해 만들어진 잉여류를 (a-)로 표시하면 ( 추후 수정 )</p>
+<blockquote>
+<p>A ≡ { x∈Z | x ≡ a mod m }</p>
+</blockquote>
+<p>으로 표시된다.<br>
+즉, 합동 관계 a ≡ b mod m에 의하여 정수 집합 Z가 m개의 잉여류들로 분할(Partition)된다.</p>
+<p>Zm = { 0, 1, 2, &hellip; m-1}을 법 m에 관한 완전 잉여계(Complete residue system)라 하고,<br>
+각 잉여류의 대표원(representive)이라 한다.</p>
+<p>Zm 집합 원소 중에서 m과 서로소인 원소 전체 집합을 Zm<em>로 표시하며<br>
+이를 법 m에 관한 기약 잉여계(Reduced residue system)라고 한다.<br>
+Zm</em> 집합의 원소 개수는 φ(m)으로 나타낸다.</p>
+<p>φ(m)은 Euler의 φ함수(φ-function)라고 한다.<br>
+p가 소수일 경우</p>
+<blockquote>
+<p>zp* = { 1, 2, &hellip;, p-1 }, φ(p) = p - 1</p>
+</blockquote>
+<p>또한, gcd(a,m) = 1을 만족하는 양의 정수 a를 곱합 R = { ar1, ar2, &hellip; arφ(m)}도 기약 잉여계이다.</p>
+<h4 id="242-euler의-정리">2.4.2 Euler의 정리</h4>
+<p>위의 서술한 집합 R이 기약 잉여계이므로 법 m에 대한 다음 식이 성립된다.</p>
+<blockquote>
+<p>ar1 * ar2 * ar3 * &hellip; * arφ(m) ≡ r1 * r2 * r3 &hellip; * rφ(m) mod m<br>
+a^φ(m) * r1 * r2 * r3 &hellip; * rφ(m) ≡ r1 * r2 * r3 * &hellip; * rφ(m) mod m</p>
+</blockquote>
+<p>따라서 a^φ(m) ≡ 1 mod m이다.<br>
+이를 Euler의 정리라고 한다.</p>
+<p>Euler의 정리에서 Zm의 m이 소수 p인 경우 gcd(a,p) = 1에 대하여 φ(p) = p - 1이므로</p>
+<blockquote>
+<p>a^(p-1) ≡ 1 mod p</p>
+</blockquote>
+<p>가 성립된다. 이를 Fermat의 소정리라고 한다.<br>
+p가 소수일 때, a∈Z에 대하여</p>
+<blockquote>
+<p>a^p = a mod p</p>
+</blockquote>
+<p>가 성립된다.</p>
+<p>일차 합동식</p>
+<blockquote>
+<p>ax ≡ b mod m</p>
+</blockquote>
+<p>이 정수 a와 m이 서로소이면 x는 단 하나의 해를 갖는다.<br>
+따라서 p가 소수일 때 일차 합동식</p>
+<blockquote>
+<p>ax ≡ b mod p</p>
+</blockquote>
+<p>는 단 한개의 해를 갖는다.</p>
+<p>a와 m이 서로소이므로 au + mv = 1인 정수 u, v가 존재한다. 이 때,</p>
+<blockquote>
+<p>a(ub) + m(vb) = b</p>
+</blockquote>
+<p>이므로 a(ub) ≡ b mod m이 성립하고,<br>
+x ≡ ub mod m은  주어진 합동식의 해가 된다.</p>
+<h3 id="25-원시근">2.5 원시근</h3>
+<h4 id="251-위수">2.5.1 위수</h4>
+<p>Euler의 정리로부터 정수 a∈Z가 법 m과 서로소이면 a^φ(m) ≡ 1 mod m이다.<br>
+마찬가지로 정수 b∈Z와 m이 서로소이면</p>
+<blockquote>
+<p>b^r ≡ 1 mod m</p>
+</blockquote>
+<p>을 만족시키는 양의 정수 r이 존재하게 된다.<br>
+가장 작은 r을 법 m에 대한 b의 위수(order)이라고 한다.<br>
+[ r | φ(m)이 성립된다. ]</p>
+<p>예제를 보고 이해해보자.</p>
+<blockquote>
+<p>예제 : m = 15일 때 원소들의 위소를 구해 보자.</p>
+</blockquote>
+<p>법 m = 15의 위수</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정수</td>
+<td>위수</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>법 m = 15에 관한 기약 잉여계의 각 원소에 대한 위수는 위와 같다.<br>
+하지만 φ(15)가 존재하지 않는다. 즉, Z15 위에서는 원시근이 존재하지 않는다.</p>
+<h4 id="252-원시근">2.5.2 원시근</h4>
+<p>앞서 말한 예제에서 위수값 φ(15) = 8인 원소가 존재하지 않는다고 했다.<br>
+법 m에 관한 정수 g의 위수가 φ(m)일 때, g를 법 m에 대한 원시근(Primitive root)라고 한다.<br>
+[ 혹은 원시원소 (Primitive element) ]</p>
+<p>예제로 이해해보자.<br>
+법 m = 14에 대한 Euler 함수 φ(14) = 6이고<br>
+기약 잉여계 Z14* = { 1, 3, 5, 9, 11, 13 }는 원시근을 존재하는가?</p>
+<p>법 m = 14의 위수</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정수</td>
+<td>위수</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>위 표를 보면 3과 5는 법 m = 14에 관한 원시근이다.<br>
+원시근의 누승 { 3^1, 3^2, 3^3, 3^4, 3^5, 3^6 }과<br>
+{ 5^1, 5^2, 5^3, 5^4, 5^5, 5^6 }은 법 m = 14에 관한 기약 잉여계 Z14*가 된다.</p>
+<p>또, 법 p의 p가 소수일 때의 원시근을 g라고 하면 항상 다음식이 성립된다.</p>
+<blockquote>
+<p>g^((p-1)/2) ≡ -1 mod p</p>
+</blockquote>
+<h4 id="253-이산-대수">2.5.3 이산 대수</h4>
+<p>양의 정수 m을 법으로 갖는 법 m의 원시근을 g라고 하면</p>
+<blockquote>
+<p>{ g^1, g^2, g^3, &hellip; , g^φ(m) }</p>
+</blockquote>
+<p>은 법 m에 관한 기약 잉여계가 된다.</p>
+<p>따라서 gcd(a,m) = 1인 정수 a에 대하여</p>
+<blockquote>
+<p>a ≡ g^i mod m</p>
+</blockquote>
+<p>인 정수 i가 단 하나 존재한다.<br>
+즉, 정수 m을 법으로 구성되는 집합 Zm이 원시근 g를 가질 때<br>
+gcd(a,m) = 1인 a에 대하여</p>
+<blockquote>
+<p>a ≡ g^i mod m</p>
+</blockquote>
+<p>인 i를 법 m에 관한 g를 밑으로 갖는 a의 이산 대수(Discrete logarithm)라 한다.<br>
+이를 log g a로 나타낸다.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://roomrooms.github.io/tags/crp/">crp</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_left-side-b/" data-tooltip="[Digital Forensic] NONamed_Left Side B">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Bang JaeHun. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_left-side-b/" data-tooltip="[Digital Forensic] NONamed_Left Side B">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fcrypto-modern-cryptology-study-weak-2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fcrypto-modern-cryptology-study-weak-2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fcrypto-modern-cryptology-study-weak-2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Bang JaeHun</h4>
+    
+      <div id="about-card-bio">A Student living in Seoul</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        University Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Republic of Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://roomrooms.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://roomrooms.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/crypto-modern-cryptology-study-weak-2\/';
+          
+            this.page.identifier = '\/2021\/07\/crypto-modern-cryptology-study-weak-2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

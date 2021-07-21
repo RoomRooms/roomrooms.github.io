@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Digital Forensic] NONamed_infect">
-<meta name="twitter:title" content="[Digital Forensic] NONamed_infect">
-<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
-<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+<meta property="og:title" content="[Digital Forensic] NONamed_우리의 추억들">
+<meta name="twitter:title" content="[Digital Forensic] NONamed_우리의 추억들">
+<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
 <meta property="og:site_name" content="Rooms&#39;s SW Blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-22T02:45:54">
+    <meta property="article:published_time" content="2021-07-22T03:20:24">
   
   
-    <meta property="article:modified_time" content="2021-07-22T02:45:54">
+    <meta property="article:modified_time" content="2021-07-22T03:20:24">
   
   
   
@@ -59,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
 
 
-    <title>[Digital Forensic] NONamed_infect</title>
+    <title>[Digital Forensic] NONamed_우리의 추억들</title>
 
     <link rel="icon" href="https://roomrooms.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,13 +216,13 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      [Digital Forensic] NONamed_infect
+      [Digital Forensic] NONamed_우리의 추억들
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-22T02:45:54&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-07-22T03:20:24&#43;09:00">
         
   July 22, 2021
 
@@ -245,39 +245,7 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Problem.PNG" alt="Problem" title="Problem"></p>
-<p>오늘 풀어볼 문제다.<br>
-먼저 문제에서 제공하는 infect.ad1 파일을 다운로드했다.</p>
-<p>문제를 읽어보면 악성코드에 감염된 PC이며 해당 악성 프로그램을 찾고 실행 시간을 파악해야한다.<br>
-가장 먼저 떠오른 것은 Prefetch이다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Prefetch1.PNG" alt="Pre1"></p>
-<p>[root]\Windows\Prefetch 위치에 존재한다.<br>
-먼저 이를 추출하여 WinPrefetchView라는 툴을 사용하여 내용을 확인해보았다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Prefetch2.PNG" alt="Pre2"></p>
-<p>마구잡이로 탐색을 시작해서 크게 이상한 흔적은 찾지 못했다.<br>
-그래도 조금 의심이 가는 두 개의 흔적을 찾았다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Stranger1.PNG" alt="S2">
-<img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Stranger2.PNG" alt="S2"></p>
-<p>첫 번째 흔적은 단순히 이름이 이상했지만,<br>
-두 번째 흔적은 CMD가 실행된 흔적이였다.<br>
-일반적인 사용자는 CMD를 사용하는 일이 거의 없을텐데<br>
-파일 기준으로 최근에 실행된 흔적이 존재했다.<br>
-그래서 위 두 흔적의 최초 실행시간, 마지막 실행시간을 정리해두었다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/SInfo1.PNG" alt="Sinfo"></p>
-<p>하지만 아직 악성프로그램을 찾기에는 정보가 너무 부족했다.<br>
-그래서 Users에 있는 swing의 바탕화면을 찾아봤다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Vbox1.PNG" alt="Vbox1"></p>
-<p>너무 악성 프로그램같은 파일이 존재한다.<br>
-아직 단정할 수는 없기에 Downloads도 찾아봤다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Vbox2.PNG" alt="Vbox2"></p>
-<p>오&hellip;. 맞는 것 같다.<br>
-일단 해당 프로그램이 최초 실행된 시각과 마지막 실행시각을 알기 위해서 Prefetch를 확인했다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Vbox3.PNG" alt="Vbox3"></p>
-<p>해당 프로그램이 실행되고 있던 일을 알기 위해서 수정시간별로 정렬해보았다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_infect/Vbox4.PNG" alt="Vbox4"></p>
-<p>아까 수상하게 여겼던 CMD가 Vbox 뒤에 바로 실행된 것으로 보아<br>
-악성 프로그램임을 짐작할 수 있다.<br>
-이를 정리하여 Flag로 입력했다!</p>
+              
               
             </div>
           </div>
@@ -302,7 +270,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/" data-tooltip="[Digital Forensic] NONamed_우리의 추억들">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -310,7 +278,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/" data-tooltip="[Crypto] Modern Cryptology Study weak 2">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/" data-tooltip="[Digital Forensic] NONamed_infect">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -328,19 +296,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -388,7 +356,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/" data-tooltip="[Digital Forensic] NONamed_우리의 추억들">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -396,7 +364,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/crypto-modern-cryptology-study-weak-2/" data-tooltip="[Crypto] Modern Cryptology Study weak 2">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/" data-tooltip="[Digital Forensic] NONamed_infect">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -414,19 +382,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_infect/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -456,19 +424,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_infect%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259A%25B0%25EB%25A6%25AC%25EC%259D%2598-%25EC%25B6%2594%25EC%2596%25B5%25EB%2593%25A4%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_infect%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259A%25B0%25EB%25A6%25AC%25EC%259D%2598-%25EC%25B6%2594%25EC%2596%25B5%25EB%2593%25A4%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_infect%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259A%25B0%25EB%25A6%25AC%25EC%259D%2598-%25EC%25B6%2594%25EC%2596%25B5%25EB%2593%25A4%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -560,9 +528,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-nonamed_infect\/';
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4\/';
           
-            this.page.identifier = '\/2021\/07\/digital-forensic-nonamed_infect\/'
+            this.page.identifier = '\/2021\/07\/digital-forensic-nonamed_%EC%9A%B0%EB%A6%AC%EC%9D%98-%EC%B6%94%EC%96%B5%EB%93%A4\/'
           
         };
         (function() {

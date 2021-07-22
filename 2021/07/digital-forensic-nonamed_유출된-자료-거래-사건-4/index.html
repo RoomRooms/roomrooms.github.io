@@ -245,29 +245,29 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="" alt="Problem"></p>
+              <p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Problem.PNG" alt="Problem"></p>
 <p>이번 포스팅에서 해결해볼 문제다!!<br>
 정보가 없다. 있다면 &quot;문서&quot;와 &quot;암호화&quot;라는 부분 정도?<br>
 이를 바탕으로 먼저 VeraCrypt가 생각나서 NTFS Log Tracker로 찾아보았다.</p>
-<p><img src="" alt="Log"></p>
+<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Log1.PNG" alt="Log"></p>
 <p>찾기는 했지만 뭐가 뭔지 파악이 힘들다.<br>
 무작정 이 시간대에서부터 앞 뒤로 뒤지다보니 이상한 파일들이 보인다.<br>
 &quot;plan.txt&quot;과 &quot;vc.txt&quot;이다.<br>
 plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
-<p><img src="" alt="log2"></p>
+<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Log2.PNG" alt="log2"></p>
 <p>하지만 vc.txt는 해당 파일이 쓰레기통으로 버려졌다는 것을 확인할 수 있었다.</p>
-<p><img src="" alt="log3"></p>
+<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Log3.PNG" alt="log3"></p>
 <p>그래서 해당 파일을 찾아서 열어보았다.</p>
-<p><img src="" alt="passwd"></p>
+<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/passwd.PNG" alt="passwd"></p>
 <p>Veracrypt에서 암호화할 때 사용한 정보가 적혀있는 것으로 추정되는 파일을 찾을 수 있었다!!</p>
 <p>문제는 이에 해당하는 파일을 몇 시간 째 못 찾고 있다..<br>
 그래서 여기서부터는 다른 이의 포스팅을 참고했습니다&hellip;<br>
 (추측은 했는데, 그걸 실행해보는 것보다 무의식적으로 답을 봐버렸습니다.. 한심하고 짜증나네요..)</p>
 <p><a href="https://d0ngr0thy.tistory.com/62">참고</a> 이 글을 읽고 제가 예상했던 파티션 3이 정답이였습니다.<br>
 이 파일을 VeraCrypt로 복호화를 시키면 볼륨이 나옵니다.</p>
-<p><img src="" alt="vera"></p>
+<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/vera.PNG" alt="vera"></p>
 <p>이 볼륨 내에는 Plan.txt가 존재하며 파일 내부에 Flag가 존재합니다.</p>
-<p><img src="" alt="Flag"></p>
+<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Flag.PNG" alt="Flag"></p>
 <p>다음부터는 힘들어도 혼자 푸는 게 마음이 편하고 행복한 것 같습니다..<br>
 정답을 보는 건 항상 후회되네요..</p>
               

@@ -13,27 +13,27 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Digital Forensic] NONamed_유출된 자료 거래 사건 4">
-<meta name="twitter:title" content="[Digital Forensic] NONamed_유출된 자료 거래 사건 4">
-<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
-<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+<meta property="og:title" content="[Digital Forensic] Suninatas 30번">
+<meta name="twitter:title" content="[Digital Forensic] Suninatas 30번">
+<meta property="og:url" content="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
 <meta property="og:site_name" content="Rooms&#39;s SW Blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-07-22T11:21:00">
+    <meta property="article:published_time" content="2021-07-28T16:07:19">
   
   
-    <meta property="article:modified_time" content="2021-07-22T11:21:00">
+    <meta property="article:modified_time" content="2021-07-28T16:07:19">
   
   
   
     
       <meta property="article:section" content="Digital Forensic">
     
-      <meta property="article:section" content="NONamed">
+      <meta property="article:section" content="Suninatas">
     
   
   
@@ -59,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
 
 
-    <title>[Digital Forensic] NONamed_유출된 자료 거래 사건 4</title>
+    <title>[Digital Forensic] Suninatas 30번</title>
 
     <link rel="icon" href="https://roomrooms.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+    <link rel="canonical" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,15 +216,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      [Digital Forensic] NONamed_유출된 자료 거래 사건 4
+      [Digital Forensic] Suninatas 30번
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-07-22T11:21:00&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-07-28T16:07:19&#43;09:00">
         
-  July 22, 2021
+  July 28, 2021
 
       </time>
     
@@ -235,7 +235,7 @@
     
       <a class="category-link" href="https://roomrooms.github.io/categories/digital-forensic">Digital Forensic</a>, 
     
-      <a class="category-link" href="https://roomrooms.github.io/categories/nonamed">NONamed</a>
+      <a class="category-link" href="https://roomrooms.github.io/categories/suninatas">Suninatas</a>
     
   
 
@@ -245,31 +245,46 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Problem.PNG" alt="Problem"></p>
-<p>이번 포스팅에서 해결해볼 문제다!!<br>
-정보가 없다. 있다면 &quot;문서&quot;와 &quot;암호화&quot;라는 부분 정도?<br>
-이를 바탕으로 먼저 VeraCrypt가 생각나서 NTFS Log Tracker로 찾아보았다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Log1.PNG" alt="Log"></p>
-<p>찾기는 했지만 뭐가 뭔지 파악이 힘들다.<br>
-무작정 이 시간대에서부터 앞 뒤로 뒤지다보니 이상한 파일들이 보인다.<br>
-&quot;plan.txt&quot;과 &quot;vc.txt&quot;이다.<br>
-plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Log2.PNG" alt="log2"></p>
-<p>하지만 vc.txt는 해당 파일이 쓰레기통으로 버려졌다는 것을 확인할 수 있었다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Log3.PNG" alt="log3"></p>
-<p>그래서 해당 파일을 찾아서 열어보았다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/passwd.PNG" alt="passwd"></p>
-<p>Veracrypt에서 암호화할 때 사용한 정보가 적혀있는 것으로 추정되는 파일을 찾을 수 있었다!!</p>
-<p>문제는 이에 해당하는 파일을 몇 시간 째 못 찾고 있다..<br>
-그래서 여기서부터는 다른 이의 포스팅을 참고했습니다&hellip;<br>
-(추측은 했는데, 그걸 실행해보는 것보다 무의식적으로 답을 봐버렸습니다.. 한심하고 짜증나네요..)</p>
-<p><a href="https://d0ngr0thy.tistory.com/62">참고</a> 이 글을 읽고 제가 예상했던 파티션 3이 정답이였습니다.<br>
-이 파일을 VeraCrypt로 복호화를 시키면 볼륨이 나옵니다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/vera.PNG" alt="vera"></p>
-<p>이 볼륨 내에는 Plan.txt가 존재하며 파일 내부에 Flag가 존재합니다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Digital%20Forensic/NONamed/NONamed_Company4/Flag.PNG" alt="Flag"></p>
-<p>다음부터는 힘들어도 혼자 푸는 게 마음이 편하고 행복한 것 같습니다..<br>
-정답을 보는 건 항상 후회되네요..</p>
+              <p><img src="" alt="Problem"></p>
+<p>오늘 풀어볼 문제는 Suninatas의 30번 문제다!<br>
+문제를 보면 덤프 파일을 주면서 해당 덤프에서 3가지 정보를 알아내라고 한다.</p>
+<ol>
+<li>김장군(피해자) PC의 IP 주소</li>
+<li>해커가 열람한 기밀문서 파일명</li>
+<li>기밀문서의 내용</li>
+</ol>
+<p>일단 정보를 알아내기 전에 덤프 파일을 분석해보자!<br>
+도구는 Volatility를 사용했다.</p>
+<p>먼저 덤프 파일의 프로파일 정보를 알아내야 pstree든, netscan이든 정보를 알아낼 수 있다.<br>
+imageinfo 명령어를 통해서 정보를 알아보자!</p>
+<p><img src="" alt="imageinfo"></p>
+<p>위 정보를 보면 프로파일이 &quot;Win7SP1x86_23418&quot;이다.<br>
+이를 이용해서 가장 먼저 피해자 PC의 IP 주소를 알아보자.</p>
+<p>덤프파일의 네트워크 정보는 보통 netscan을 통해서 알아낸다!</p>
+<p><img src="" alt="netscan"></p>
+<p>출력된 결과를 보면 Local Address가 &quot;192.168.197.138&quot;인 것을 알 수 있다.<br>
+이렇게 IP주소를 알아냈다. 이제 해커가 열람한 기밀 문서를 찾아보자!! <br>
+흔적을 찾기 위해서 가장 먼저 pstree를 통해서 수상한 프로세스가 없는지 찾아보았다.</p>
+<p><img src="" alt="pstree"></p>
+<p>프로세스들을 보다보면 cmd.exe가 있는 것을 볼 수 있다.<br>
+나는 이를 수상하게 여겨 cmd.exe의 PID인 1256을 PPID로 갖는 프로세스를 찾았다.<br>
+찾아보니 notepad.exe가 있었다. 즉 CMD를 통해 메모장을 호출했다는 것이다.</p>
+<p>CMD에서 무슨 조작을 하였는지 알기 위해서 cmdscan을 이용해서<br>
+cmd에서 사용된 명령어들을 확인해보았다!</p>
+<p><img src="" alt="cmdscan"></p>
+<p>있다! cmd에서 &quot;C:\Users\training\Desktop\SecreetDocumen7.txt&quot;을 호출했다.<br>
+즉, 해커가 열람한 파일은 &quot;SecreetDocument7.txt&quot;라는 것을 알 수 있다.<br>
+(이것 말고도 iehistory를 통해서도 알 수 있는데, 이 명령어는 웹 사용기록을 보는 것이다.)</p>
+<p>자! 1번과 2번을 해결했다. 마지막으로 기밀 문서의 내용을 알아내야 한다.<br>
+메모리 덤프에서 파일을 추출하기 위해서는 dumpfiles를 사용해야 한다.</p>
+<p><img src="" alt="dumpfiles1">
+<img src="" alt="dumpfiles2"></p>
+<p>정상적으로 명령어가 실행됐다면 dat 파일이 추출될 것이다!!<br>
+이 파일을 .txt 형식으로 바꿔주면 내용을 확인할 수 있다.</p>
+<p><img src="" alt="key"></p>
+<p>이렇게 3번까지 모두 찾아낼 수 있다.<br>
+위 키를 문제의 설명대로 lowercase(md5())를 통해서 제출해야 한다.<br>
+(+ 빼야 한다. 필자는 넣었다가 틀려서 당황했던 경험이..)</p>
               
             </div>
           </div>
@@ -294,7 +309,7 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/" data-tooltip="[Digital Forensic] Suninatas 30번">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -302,7 +317,7 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-3/" data-tooltip="[Digital Forensic] NONamed_유출된 자료 거래 사건 3">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/" data-tooltip="[Digital Forensic] NONamed_유출된 자료 거래 사건 4">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -320,19 +335,19 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -380,7 +395,7 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/" data-tooltip="[Digital Forensic] Suninatas 30번">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -388,7 +403,7 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-3/" data-tooltip="[Digital Forensic] NONamed_유출된 자료 거래 사건 3">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/" data-tooltip="[Digital Forensic] NONamed_유출된 자료 거래 사건 4">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -406,19 +421,19 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/07/digital-forensic-suninatas-30%EB%B2%88/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -448,19 +463,19 @@ plan.txt는 별다른 이상한 점을 찾지 못했다.</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259C%25A0%25EC%25B6%259C%25EB%2590%259C-%25EC%259E%2590%25EB%25A3%258C-%25EA%25B1%25B0%25EB%259E%2598-%25EC%2582%25AC%25EA%25B1%25B4-4%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-suninatas-30%25EB%25B2%2588%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259C%25A0%25EC%25B6%259C%25EB%2590%259C-%25EC%259E%2590%25EB%25A3%258C-%25EA%25B1%25B0%25EB%259E%2598-%25EC%2582%25AC%25EA%25B1%25B4-4%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-suninatas-30%25EB%25B2%2588%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-nonamed_%25EC%259C%25A0%25EC%25B6%259C%25EB%2590%259C-%25EC%259E%2590%25EB%25A3%258C-%25EA%25B1%25B0%25EB%259E%2598-%25EC%2582%25AC%25EA%25B1%25B4-4%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F07%2Fdigital-forensic-suninatas-30%25EB%25B2%2588%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -552,9 +567,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4\/';
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/07\/digital-forensic-suninatas-30%EB%B2%88\/';
           
-            this.page.identifier = '\/2021\/07\/digital-forensic-nonamed_%EC%9C%A0%EC%B6%9C%EB%90%9C-%EC%9E%90%EB%A3%8C-%EA%B1%B0%EB%9E%98-%EC%82%AC%EA%B1%B4-4\/'
+            this.page.identifier = '\/2021\/07\/digital-forensic-suninatas-30%EB%B2%88\/'
           
         };
         (function() {

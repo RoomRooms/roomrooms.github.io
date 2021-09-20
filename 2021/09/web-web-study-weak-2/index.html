@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.85.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Bang JaeHun">
+<meta name="keywords" content="tech">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Web] Web Study Weak 2">
+<meta name="twitter:title" content="[Web] Web Study Weak 2">
+<meta property="og:url" content="https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+<meta property="og:site_name" content="Rooms&#39;s SW Blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-09-20T17:07:18">
+  
+  
+    <meta property="article:modified_time" content="2021-09-20T17:07:18">
+  
+  
+  
+    
+      <meta property="article:section" content="Web">
+    
+      <meta property="article:section" content="Whois">
+    
+  
+  
+    
+      <meta property="article:tag" content="Web">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
+
+
+    <title>[Web] Web Study Weak 2</title>
+
+    <link rel="icon" href="https://roomrooms.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://roomrooms.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://roomrooms.github.io/">Rooms&#39;s SW Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://roomrooms.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://roomrooms.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Bang JaeHun</h4>
+        
+          <h5 class="sidebar-profile-bio">A Student living in Seoul</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/RoomRooms" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://roomrooms.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      [Web] Web Study Weak 2
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-09-20T17:07:18&#43;09:00">
+        
+  September 20, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://roomrooms.github.io/categories/web">Web</a>, 
+    
+      <a class="category-link" href="https://roomrooms.github.io/categories/whois">Whois</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>오늘의 포스팅에서는 CORS와 CSP(Content Security Policy)를 다룰 것이다.</p>
+<h1 id="cors">CORS</h1>
+<p>CORS의 사전적 의미를 먼저 알아보자!<br>
+Cross-origin resource sharing, 즉 CORS다. 한글로는 교차 출처 자원 공유라고 한다.<br>
+이름만 들으면 Web 상에서 서로의 자원을 주고 받는 형태의 기술인가? 라는 생각밖에 안 든다.</p>
+<p>CORS에 대해 자세히 알기 위해서는 동일 출처 정책 이라는 것을 알아야 한다.<br>
+동일 출저 정책이란 특정 출처의 자원을 사용할 때, 다른 출처에서의 리소스 접근을 금지하는 정책입니다.<br>
+한 마디로 같은 출처 내에서만 해결해라! 라는 거죠.<br>
+이런 귀찮은 건 왜 만들었지?.. 싶지만 역시 보안 때문입니다.</p>
+<p>Web에서는 외부 리소스를 제한하는데 이는 XSS와 같은 해킹을 방어하기 위함입니다.<br>
+즉, 보안성을 위해 내부에서 일 처리해! 라는 의미입니다.<br>
+하지만 일 하다보면 외부 자원이 필요하게 됩니다.<br>
+이 때, 다른 출처의 리소스를 호출하기 위한 하나의 방법이 CORS입니다.<br>
+특정 방식으로 외부와 통신하는 것으로 동일 출처 정책의 인가를 받는 통신이라는 겁니다.</p>
+<p>CORS는 크게 두 가지의 통신 방식이 존재합니다.<br>
+단순 요청과 예비 요청입니다.</p>
+<h2 id="단순-요청">단순 요청</h2>
+<p>단순 요청은 외부 출처(서버)에 특정한 형식(조건)을 충족한 요청을 의미합니다.<br>
+조건은 아래와 같습니다.</p>
+<ul>
+<li>
+<p>Method</p>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<li>HEAD</li>
+</ul>
+</li>
+<li>
+<p>헤더 ( 아래 헤더만 사용 가능 )</p>
+<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+<li>DPR,</li>
+<li>Downlink</li>
+<li>Save-Data</li>
+<li>Viewport-Width</li>
+<li>Width</li>
+</ul>
+</li>
+<li>
+<p>Content-Type ( 아래 값만 사용 가능 )</p>
+<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+</li>
+</ul>
+<p>위와 같은 조건 외 몇 가지 더 존재합니다.<br>
+( 참고는 아래에 링크 남겨두겠습니다! )</p>
+<p>위의 조건을 충족하여 서버에 요청을 보내면<br>
+서버는 Access-Control-Allow-Origin 헤더를 포함하여 응답합니다.<br>
+브라우저는 위 헤더를 확인해서 CORS을 진행할 것인지 판단합니다.</p>
+<h2 id="예비-요청">예비 요청</h2>
+<p>예비 요청은 단순 요청을 보내기 전에 안전 여부를 확인하기 위해 먼저 예비 요청을 보내고 나서 확인이 되면 요청을 하는 방식입니다.<br>
+즉, 조건은 큰 차이가 없다는 것입니다.</p>
+<h1 id="csp">CSP</h1>
+<p>자 이제 CSP입니다. Content-Security Policy의 약자입니다.<br>
+말 그대로 악의적인 컨텐츠 실행으로 인한 해킹을 방지하기 위한 보안 정책입니다.</p>
+<p>CSP는 악의적 컨텐츠 실행을 방지하기 위해 신뢰 가능한 컨텐츠 목록을 갖는다.<br>
+이 목록 내의 컨텐츠는 허가되지만 이 이외의 비인가 컨텐츠는 차단하는 방식이다.<br>
+방화벽의 White List 방식을 생각하면 편할 거다.<br>
+특수 헤더를 HTTP에 삽입하여 특정 컨텐츠의 출처를 확인하여 목록과 대조한다.</p>
+<p>헤더에는 여러 가지 종류가 존재하며 그 예는 아래와 같다.</p>
+<ul>
+<li>Content-Security-Policy: default-src &lsquo;self&rsquo;</li>
+<li>Content-Security-Policy: default-src &lsquo;self&rsquo; *.example</li>
+</ul>
+<hr>
+<p>위 두 개념을 공부하는 데에 참고한 블로그들입니다.<br>
+저 같은 분들이 공부하도록 도움을 주시는 블로거님들 감사합니다.</p>
+<p><a href="https://w01fgang.tistory.com/147">참고1</a><br>
+<a href="https://developer.mozilla.org/ko/docs/Web/HTTP/CORS">참고2</a><br>
+<a href="https://developer.mozilla.org/ko/docs/Web/HTTP/CORS">참고3</a><br>
+<a href="https://beomy.github.io/tech/browser/cors/">참고4</a></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://roomrooms.github.io/tags/web/">Web</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/09/web-webhaking.kr-21%EB%B2%88/" data-tooltip="[Web] Webhaking.kr 21번">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/09/web-web-study-weak-1/" data-tooltip="[Web] Web Study Weak 1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Bang JaeHun. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/09/web-webhaking.kr-21%EB%B2%88/" data-tooltip="[Web] Webhaking.kr 21번">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/09/web-web-study-weak-1/" data-tooltip="[Web] Web Study Weak 1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/09/web-web-study-weak-2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F09%2Fweb-web-study-weak-2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F09%2Fweb-web-study-weak-2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F09%2Fweb-web-study-weak-2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Bang JaeHun</h4>
+    
+      <div id="about-card-bio">A Student living in Seoul</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        University Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Republic of Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://roomrooms.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://roomrooms.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/09\/web-web-study-weak-2\/';
+          
+            this.page.identifier = '\/2021\/09\/web-web-study-weak-2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

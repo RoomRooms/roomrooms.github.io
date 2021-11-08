@@ -250,22 +250,22 @@
 <h1 id="root-me">Root-Me</h1>
 <p>정확히는 PE x86 - 0 Protection이다.<br>
 먼저 문제를 보면 아무런 힌트없이 파일 하나를 준다.</p>
-<p>![Problem1](<a href="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE">https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE</a> x86 - 0 Protection/Problem1.PNG)</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/Problem1.PNG?raw=true" alt="Problem1"></p>
 <p>문제에서 제공되는 파일을 x32dbg로 열어보자!</p>
-<p>![Problem2](<a href="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE">https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE</a> x86 - 0 Protection/Problem2.PNG)</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/Problem2.PNG?raw=true" alt="Problem2"></p>
 <p>흠.. 사실 처음 열어봐서는 하나도 모르겠다.<br>
 일단 프로그램 작성자가 작성한 부분을 찾아야겠다.<br>
 이를 위해서 몇 가지 방법이 있는데 필자는 import한 함수를 통해 찾아볼 것이다.</p>
-<p>![import](<a href="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE">https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE</a> x86 - 0 Protection/import.PNG)</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/import.PNG?raw=true" alt="import"></p>
 <p>위 버튼을 누르면 사용자가 import한 함수들을 알 수 있다.<br>
 이를 통해 찾아보면 puts 함수가 있는 것을 확인할 수 있는데,<br>
 이를 보고 사용자가 작성한 부분이라 추정하여 이를 추적해보았다.</p>
-<p>![Find](<a href="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE">https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE</a> x86 - 0 Protection/Find.PNG)</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/Find.PNG?raw=true" alt="Find"></p>
 <p>함수 하나를 찾았다. 내용을 보니 문자를 입력받고<br>
 이를 비밀번호와 대조하는 역할의 함수로 추정된다.<br>
 Root-Me를 접속해보면 알겠지만, 이 문제에서는 비밀번호를 찾으라고 했다.<br>
 프로그램에서 대조하는 문자들을 정리해서 Root-Me에 입력해보니 정답임을 확인할 수 있었다.</p>
-<p>![puts](<a href="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE">https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Root-Me/PE</a> x86 - 0 Protection/puts.PNG)</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/puts.PNG?raw=true" alt="puts"></p>
 <hr>
 <h1 id="easyreverseme">EasyReverseMe</h1>
 <p>이 문제는 우리 Whois내에서 만들어진 교육용 문제이다.<br>

@@ -13,32 +13,32 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[RE] RE Study Weak 2">
-<meta name="twitter:title" content="[RE] RE Study Weak 2">
-<meta property="og:url" content="https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
-<meta property="twitter:url" content="https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+<meta property="og:title" content="[Pwn] Pwn Study Weak 1">
+<meta name="twitter:title" content="[Pwn] Pwn Study Weak 1">
+<meta property="og:url" content="https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
+<meta property="twitter:url" content="https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
 <meta property="og:site_name" content="Rooms&#39;s SW Blog">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-11-08T22:00:29">
+    <meta property="article:published_time" content="2021-11-21T02:51:09">
   
   
-    <meta property="article:modified_time" content="2021-11-08T22:00:29">
+    <meta property="article:modified_time" content="2021-11-21T02:51:09">
   
   
   
     
-      <meta property="article:section" content="RE">
+      <meta property="article:section" content="Pwn">
     
       <meta property="article:section" content="Whois">
     
   
   
     
-      <meta property="article:tag" content="RE">
+      <meta property="article:tag" content="Pwn">
     
   
 
@@ -59,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/b971171072d1d11bbd25c73f828976b0?s=640">
 
 
-    <title>[RE] RE Study Weak 2</title>
+    <title>[Pwn] Pwn Study Weak 1</title>
 
     <link rel="icon" href="https://roomrooms.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+    <link rel="canonical" href="https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -216,15 +216,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      [RE] RE Study Weak 2
+      [Pwn] Pwn Study Weak 1
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-11-08T22:00:29&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-11-21T02:51:09&#43;09:00">
         
-  November 8, 2021
+  November 21, 2021
 
       </time>
     
@@ -233,7 +233,7 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://roomrooms.github.io/categories/re">RE</a>, 
+      <a class="category-link" href="https://roomrooms.github.io/categories/pwn">Pwn</a>, 
     
       <a class="category-link" href="https://roomrooms.github.io/categories/whois">Whois</a>
     
@@ -245,58 +245,89 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Whois RE Study 2주차 과제에 대해서 포스팅하려 한다.<br>
-과제는 총 2개. Root-Me와 EasyReverseMe이다.</p>
-<h1 id="root-me">Root-Me</h1>
-<p>정확히는 PE x86 - 0 Protection이다.<br>
-먼저 문제를 보면 아무런 힌트없이 파일 하나를 준다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/Problem1.PNG?raw=true" alt="Problem1"></p>
-<p>문제에서 제공되는 파일을 x32dbg로 열어보자!</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/Problem2.PNG?raw=true" alt="Problem2"></p>
-<p>흠.. 사실 처음 열어봐서는 하나도 모르겠다.<br>
-일단 프로그램 작성자가 작성한 부분을 찾아야겠다.<br>
-이를 위해서 몇 가지 방법이 있는데 필자는 import한 함수를 통해 찾아볼 것이다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/import.PNG?raw=true" alt="import"></p>
-<p>위 버튼을 누르면 사용자가 import한 함수들을 알 수 있다.<br>
-이를 통해 찾아보면 puts 함수가 있는 것을 확인할 수 있는데,<br>
-이를 보고 사용자가 작성한 부분이라 추정하여 이를 추적해보았다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/Find.PNG?raw=true" alt="Find"></p>
-<p>함수 하나를 찾았다. 내용을 보니 문자를 입력받고<br>
-이를 비밀번호와 대조하는 역할의 함수로 추정된다.<br>
-Root-Me를 접속해보면 알겠지만, 이 문제에서는 비밀번호를 찾으라고 했다.<br>
-프로그램에서 대조하는 문자들을 정리해서 Root-Me에 입력해보니 정답임을 확인할 수 있었다.</p>
-<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Reversing/Root-Me/PE%20x86%20-%200%20Protection/puts.PNG?raw=true" alt="puts"></p>
-<hr>
-<h1 id="easyreverseme">EasyReverseMe</h1>
-<p>이 문제는 우리 Whois내에서 만들어진 교육용 문제이다.<br>
-먼저 프로그램을 x64dbg를 통해서 열어보면 다음과 같다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/Problem.PNG" alt="Problem"></p>
-<p>흠.. 하나도 모르겠다. 일단 실행을 시켜보자.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/FProblem.PNG" alt="Fproblem"></p>
-<p>첫 번째 문제다. 무슨 숫자일까?<br>
-이는 puts를 통해 문자열을 출력한 부분 아래에서 확인할 수 있다.<br>
-cmp 문을 통해서 입력받은 문자열과 0x49를 비교하는 부분을<br>
-처음에는 이를 그대로 49라 입력하면 틀린다.<br>
-컴터는 10진수로 입력받기에 0x49를 10진수로 바꿔서 73을 입력해보면 정답이 나온다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/FSuccess.PNG" alt="FSuccess"></p>
-<p>다시 쭉~ 실행시키다보면 두 번째 문제와 마주하게 된다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/SProblem.PNG" alt="SProblem"></p>
-<p>와우, 내가 어떻게 알까 싶지만, 코드를 분석해보자.<br>
-puts를 통해 문자열을 출력한 이후에 fgets를 통해서 입력을 받는다.<br>
-입력받은 값을 qword ptr ds:[40406D]랑 비교하게 되는데,<br>
-이를 통해서 정답이 &ldquo;I&rsquo;m so hungry&quot;라는 것을 알 수 있었다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/SSuccess.PNG" alt="SSuccess"></p>
-<p>자 마지막이다. 쭉 실행을 하다보면 랜덤한 값을 맞추라는 문제가 나온다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/Finalproblem.PNG" alt="FinalProblem"></p>
-<p>느엇.. 내가 어케 알지?.. 싶지만 코드를 보면 문자열을 출력하기 전에<br>
-rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<br>
-이렇게 결정된 랜덤값이 RAX에 저장되게 되는데 그것은 다음과 같다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/rand.PNG" alt="rand"></p>
-<p>0x5630은 16진수다. 이를 10진수로 변환하면? 22064이다.<br>
-자 이제 랜덤값을 프로그램에 입력하면?</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/FinalSuccess.PNG" alt="FinalSuccess"></p>
-<p>문제를 풀 수 있다. 이제 마지막 Flag 값을 받으면서 프로그램이 종료된다.</p>
-<p><img src="https://raw.githubusercontent.com/RoomRooms/blog/master/img/Reversing/Whois_Study/EasyReverseMe/Flags.PNG" alt="Flags"></p>
+              <p>오늘은 Whois에서 진행 중인 Pwnable 교육 과제의 Write-UP을 포스팅하려고 한다!</p>
+<h1 id="student-id">Student ID</h1>
+<p><img src="" alt="Problem"></p>
+<p>첫 문제다! Student ID!!<br>
+일단 다운받아서 Ubuntu로 옮겨보자.</p>
+<p><img src="" alt="file"></p>
+<p>일단 해당 파일은 ELF-64bit 파일이다. 리눅스 실행파일이라는 뜻이다!<br>
+일단 분석을 위해 gdb를 실행하고 main 함수를 확인해보자!</p>
+<p><img src="" alt="pd main"></p>
+<p>흠&hellip; 읽어보면 출력 -&gt; 입력 -&gt; 출력 x 2의 흐름이다.<br>
+필자는 main에서 가장 중요하다고 본 부분이 다음과 같다.</p>
+<p><img src="" alt="system"></p>
+<p>사용자에게 scanf함수를 통해서 입력을 받은 후 rbp-0x4 주소에 있는 데이터와 0x499602d2와 비교,<br>
+같지 않다면 점프하지만, 같다면 system 함수를 실행한다.<br>
+그럼 system 함수가 실행하는 명령문을 확인해보자!</p>
+<p><img src="" alt="string"></p>
+<p>여기가 중요부분이라는 것이 명확해졌다.<br>
+그럼 rbp-0x4의 데이터를 0x499602d2로 바꿔야 한다!<br>
+가장 처음으로 Scanf로 입력받는 주소를 확인해보자.<br>
+rbp-0x20이다. 즉, 문자열을 0x1c만큼 받은 다음, 0x499602d2를 입력하면<br>
+BOF에 의해서 rbp-0x4의 데이터가 바뀔 것이다!!<br>
+그럼 먼저 Test를 진행해보자!</p>
+<p><img src="" alt="test"></p>
+<p>성공이다! 그럼 바로 직접 서버에 입력하여 Flag를 얻어보자!</p>
+<p><img src="" alt="Flag"></p>
+<h1 id="magic-spell">Magic Spell</h1>
+<p>두 번째 문제다!</p>
+<p><img src="" alt="Problem"></p>
+<p>내가 아는 주문은 윙가르디움 레비오우사 뿐인데&hellip;<br>
+일단 file 명령어를 통해서 다운받은 문제파일을 확인해보자</p>
+<p><img src="" alt="file"></p>
+<p>Student 파일과 마찬가지로 ELF-64bit 파일이다.<br>
+gdb를 통해 main을 확인해보자!!</p>
+<p><img src="" alt="pd main"></p>
+<p>너무 심플하다. spell1 함수를 실행할 뿐,<br>
+그렇다면 spell1 함수를 둘러보자!</p>
+<p><img src="" alt="pd spell1"></p>
+<p>main에 비해서 내용이 실하다. 그럼 천천히 읽어보자!<br>
+읽다보면 한 가지 특이한 부분이 존재한다. 그것이 아래다.</p>
+<p><img src="" alt="cmp spell1"></p>
+<p>rbp-0x1의 주소값과 0x4d를 비교하여 같다면 puts를 한 번 실행하고 spell2 함수로 넘어간다.<br>
+틀릴 경우는 spell1 함수 종료.<br>
+그렇다면 cmp 바로 위 scanf를 통해서 이 문제를 통과해보자.</p>
+<p>scanf가 입력받는 주소는 rbp-0x20이다. 비교문을 수행하는 rbp-0x1과 0x1e의 차이가 존재한다.<br>
+그러니 A를 0x1e번 입력한 후, 0x4d를 입력하면<br>
+rbp-0x1에 0x4d가 삽입되면서 spell2로 넘어가게 될 것이다.<br>
+확인해보자!!</p>
+<p><img src="" alt="Fin spell1"></p>
+<p>성공이다! 이제 Spell2 함수의 내부를 들여다보자.</p>
+<p><img src="" alt="pd spell2"></p>
+<p>문자를 출력 -&gt; 입력 -&gt; 검사의 흐름을 갖는 함수같다.<br>
+내용을 보다보면 여기가 포인트구나 하는 부분이 있다. 아래와 같다.</p>
+<p><img src="" alt="cmp spell2"></p>
+<p>scanf를 통해 rip+0x2e82의 위치에 데이터를 입력받는다.<br>
+문제는 비교문을 수행하는 주소가 rip+0x2e6e라는 것이다.<br>
+둘 사이에는 0x10의 차이가 존재한다. 주석에도 있듯이 bof를 통해 해결해보자.<br>
+A를 0x10번 출력하고, 이후에 검사하는 문자열 즉, 0x205a를 입력하면 해결될 것이다.<br>
+자 이제, 0x205a의 문자열이 무엇인지 확인해보자!</p>
+<p><img src="" alt="string"></p>
+<p>pwnable!이라고 한다. 즉, A를 0x1e번 입력하고 M을 1번입력하여 spell1을 통과하고,<br>
+A를 0x10번 입력 후, pwnable!을 입력하는 것으로써 spell2가 해결되면서 Flag를 알 수 있을 것이다!</p>
+<p><img src="" alt="flag"></p>
+<h1 id="system">System</h1>
+<p>마지막 문제다.</p>
+<p><img src="" alt="Problem"></p>
+<p>일단 바로 다운 후, Ubuntu에서 File 명령어를 통해 무슨 파일인지 확인해보자.</p>
+<p><img src="" alt="file"></p>
+<p>ELF-64bit 파일이니, 바로 gdb를 통해서 열어보자.</p>
+<p><img src="" alt="pd main"></p>
+<p>단순한 프로그램이다. 입력을 받은 후, rip+0x2eb4의 주소에 위치한 command를<br>
+system함수를 통해서 실행하는 프로그램이다.<br>
+그럼 command를 확인해보자.</p>
+<p><img src="" alt="string"></p>
+<p>ls -al이라,, 현 위치의 있는 모든 파일, 폴더들의 권한등을 모두 출력하는 명령어다.<br>
+즉, 이 부분을 cat ./flag로 덮어쓰면 해결될 것이다.<br>
+여기를 덮어쓰기 위해서는 gets를 통해 입력받는 rip+0x2e95에서부터<br>
+비교문을 수행하는 rip+0x2eb4까지는 0x30의 차이가 존재한다.<br>
+즉, A를 0x30번 입력한 후, 원하는 명령어를 입력하면 해결될 것이다. 바로 테스트다!</p>
+<p><img src="" alt="test"></p>
+<p>명령어를 file ./shell로 바꿔봤다. 정상적으로 작동하는 것을 확인할 수 있다!!<br>
+이제 바로 Flag를 얻으러 가보자!!</p>
+<p><img src="" alt="Flag"></p>
+<p>이것으로 Whois Pwnable 과제 1주차 완료다!</p>
               
             </div>
           </div>
@@ -308,7 +339,7 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://roomrooms.github.io/tags/re/">RE</a>
+  <a class="tag tag--primary tag--small" href="https://roomrooms.github.io/tags/pwn/">Pwn</a>
 
                   </div>
                 
@@ -321,7 +352,7 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/" data-tooltip="[Pwn] Pwn Study Weak 1">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -329,7 +360,7 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/10/re-re-study-weak-1/" data-tooltip="[RE] RE Study Weak 1">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/11/re-re-study-weak-2/" data-tooltip="[RE] RE Study Weak 2">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -347,19 +378,19 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -407,7 +438,7 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/" data-tooltip="[Pwn] Pwn Study Weak 1">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -415,7 +446,7 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/10/re-re-study-weak-1/" data-tooltip="[RE] RE Study Weak 1">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/11/re-re-study-weak-2/" data-tooltip="[RE] RE Study Weak 2">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -433,19 +464,19 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/11/re-re-study-weak-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://roomrooms.github.io/2021/11/pwn-pwn-study-weak-1/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -475,19 +506,19 @@ rand함수를 통해서 랜덤값을 결정하는 것을 확인할 수 있다.<b
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F11%2Fre-re-study-weak-2%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froomrooms.github.io%2F2021%2F11%2Fpwn-pwn-study-weak-1%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F11%2Fre-re-study-weak-2%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Froomrooms.github.io%2F2021%2F11%2Fpwn-pwn-study-weak-1%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F11%2Fre-re-study-weak-2%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Froomrooms.github.io%2F2021%2F11%2Fpwn-pwn-study-weak-1%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -579,9 +610,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/11\/re-re-study-weak-2\/';
+          this.page.url = 'https:\/\/roomrooms.github.io\/2021\/11\/pwn-pwn-study-weak-1\/';
           
-            this.page.identifier = '\/2021\/11\/re-re-study-weak-2\/'
+            this.page.identifier = '\/2021\/11\/pwn-pwn-study-weak-1\/'
           
         };
         (function() {

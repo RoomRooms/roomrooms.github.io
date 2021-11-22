@@ -288,8 +288,8 @@ gdb를 통해 main을 확인해보자!!</p>
 <p>rbp-0x1의 주소값과 0x4d를 비교하여 같다면 puts를 한 번 실행하고 spell2 함수로 넘어간다.<br>
 틀릴 경우는 spell1 함수 종료.<br>
 그렇다면 cmp 바로 위 scanf를 통해서 이 문제를 통과해보자.</p>
-<p>scanf가 입력받는 주소는 rbp-0x20이다. 비교문을 수행하는 rbp-0x1과 0x1e의 차이가 존재한다.<br>
-그러니 A를 0x1e번 입력한 후, 0x4d를 입력하면<br>
+<p>scanf가 입력받는 주소는 rbp-0x20이다. 비교문을 수행하는 rbp-0x1과 0x1f의 차이가 존재한다.<br>
+그러니 A를 0x1f번 입력한 후, 0x4d를 입력하면<br>
 rbp-0x1에 0x4d가 삽입되면서 spell2로 넘어가게 될 것이다.<br>
 확인해보자!!</p>
 <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/Weak_1/Magic%20Spell/Fin%20spell1.PNG?raw=true" alt="Fin spell1"></p>

